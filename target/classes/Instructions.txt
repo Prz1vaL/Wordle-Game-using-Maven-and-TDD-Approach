@@ -1,0 +1,14 @@
+---------------------------------- "Hello Player"-----------------------------------------------------
+
+1. You have six tries to guess the five-letter Wordle of the day.
+
+2. Type in your guess and submit your word by hitting the “enter” key on the Wordle keyboard.
+
+3. The color of the tiles will change after you submit your word.
+    * A yellow tile indicates that you picked the right letter, but it’s in the wrong spot.
+    * The green tile indicates that you picked the right letter in the correct spot.
+    * The gray tile indicates that the letter you picked is not included in the word at all.
+
+4. Continue until you solve the Wordle or run out of guesses. Good luck!
+
+------------------------------"May the Force be with you!"-------------------------------------------
