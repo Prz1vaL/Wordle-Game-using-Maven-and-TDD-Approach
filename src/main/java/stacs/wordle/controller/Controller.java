@@ -7,7 +7,7 @@ import java.io.FileReader;
 public class Controller {
     // Displays the instructions to play the game.
     public static void instructions() {
-        File file = new File("/Users/apm30/Downloads/Wordle/src/main/resources/Instructions.txt");
+        File file = new File("src/main/resources/Instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
