@@ -1,6 +1,6 @@
 package stacs.wordle;
 
-import stacs.wordle.controller.Controller;
+import stacs.wordle.mainService.MainService;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -15,11 +15,10 @@ import java.util.ArrayList;
 
 public class WordleApp
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
         System.out.println("Welcome to CS5031 - Wordle");
-        Controller.instructions();
-        Controller.playGame();
+        MainService.instructions();
+        MainService.playGame();
     }
 
     // Unimplemented skeleton

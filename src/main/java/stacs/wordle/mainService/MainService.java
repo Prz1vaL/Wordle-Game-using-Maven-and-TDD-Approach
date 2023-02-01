@@ -1,5 +1,6 @@
-package stacs.wordle.controller;
+package stacs.wordle.mainService;
 
+import stacs.wordle.checker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
 
 import java.io.BufferedReader;
@@ -7,7 +8,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class Controller {
+public class MainService {
 
     // Wordle Color Constants
     public static final String YELLOW = "#FFFF00";
@@ -17,36 +18,40 @@ public class Controller {
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
     private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
+    private static boolean gameStatus = true;
 
 
-
-public static void playGame() {
-    general_message();
-}
-
-    /**
-     * This method is used to get the input from the user.
-     * @param scanner - Scanner object
-     * @return input - String
-     */
-public static String getInput(Scanner scanner) {
-
-    boolean gameStatus = true;
-    while (gameStatus) {
+    public static void playGame() {
+        general_message();
         System.out.println("Enter a 5 letter word: ");
-        String input = getInput(scanner);
-        if (input.equals("exit")) {
-            gameStatus = false;
-        } else if (input.equals("restart")) {
-            gameStatus = true;
-        } else {
-            System.out.println("Invalid input");
+        String input = scanner.nextLine();
+        input = input.trim().toLowerCase();
+
+        while (gameStatus) {
+            if (input.equals("exit")) {
+                System.out.println("Exiting the game");
+                exitGame();
+            } else if (input.equals("restart")) {
+                System.out.println("Restarting the game");
+                restartGame();
+
+            } else if (WordChecker.checkIfValid(input)) {
+
+            } else {
+                System.out.println("Invalid input..Exiting the game !");
+                exitGame();
+            }
         }
     }
-    return null;
-}
 
+    private static boolean exitGame() {
+        return gameStatus = false;
 
+    }
+
+    private static void restartGame() {
+        playGame();
+    }
 
 
     // Displays the instructions to play the game.
@@ -65,11 +70,10 @@ public static String getInput(Scanner scanner) {
     }
 
 
-
     private static void general_message() {
-        String instruction = "\n------------Type \"exit\" to exit or \"restart \" to restart the game------------";
+        String instruction = "\n------------Type \"exit\" to exit or \"restart \" to restart the game------------------";
         System.out.println(instruction);
-        String message = "\"\n----------------------------Playing Game----------------------------\"";
+        String message = "\"\n---------------------------------Playing Game--------------------------------------\"";
         System.out.println(message);
     }
 
