@@ -15,6 +15,10 @@ public class WordleKeyboard {
         InitialState();
     }
 
+
+    //  Resetting the keyboard layout.
+    // '3' is given as default value as 0,1,2 are defined as states in the game.
+
     private void InitialState() {
         alphabets.put("a", 3);
         alphabets.put("b", 3);
