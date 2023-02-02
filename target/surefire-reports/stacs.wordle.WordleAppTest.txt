@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: stacs.wordle.WordleAppTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.016 s <<< FAILURE! - in stacs.wordle.WordleAppTest
-shouldLoadWordlist  Time elapsed: 0.013 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <3> but was: <0>
-	at stacs.wordle.WordleAppTest.shouldLoadWordlist(WordleAppTest.java:19)
-

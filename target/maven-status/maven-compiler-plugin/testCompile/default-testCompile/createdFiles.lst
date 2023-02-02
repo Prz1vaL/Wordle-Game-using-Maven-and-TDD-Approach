@@ -1,1 +1,2 @@
-stacs/wordle/WordleAppTest.class
+stacs/wordle/mainService/MainServiceTest.class
+stacs/wordle/randomizer/RandomizerTest.class
