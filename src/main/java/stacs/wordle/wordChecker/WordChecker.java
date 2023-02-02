@@ -1,13 +1,13 @@
-package stacs.wordle.checker;
+package stacs.wordle.wordChecker;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class WordChecker {
+    static File wordGuess = new File("src/main/resources/wordlist.txt");
 
     public static boolean checkIfValid(String input){
-        File wordGuess = new File("src/main/resources/wordlist.txt");
         try {
             Scanner scanner = new Scanner(wordGuess);
             while(scanner.hasNextLine()){

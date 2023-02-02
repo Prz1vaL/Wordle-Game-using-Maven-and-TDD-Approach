@@ -21,10 +21,4 @@ public class WordleApp
         MainService.playGame();
     }
 
-    // Unimplemented skeleton
-    // You may refactor this method
-    protected static ArrayList<String> loadWordlist(String wordlistPath) throws FileNotFoundException
-    {
-        return new ArrayList<String>();
-    }
 }

@@ -1,11 +1,12 @@
 package stacs.wordle.mainService;
 
-import stacs.wordle.checker.WordChecker;
+import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainService {
@@ -22,6 +23,7 @@ public class MainService {
 
 
     public static void playGame() {
+        ArrayList<String> guessWords = new ArrayList<>();
         general_message();
         System.out.println("Enter a 5 letter word: ");
         String input = scanner.nextLine();
@@ -36,6 +38,8 @@ public class MainService {
                 restartGame();
 
             } else if (WordChecker.checkIfValid(input)) {
+                guessWords.add(input);
+
 
             } else {
                 System.out.println("Invalid input..Exiting the game !");
@@ -56,7 +60,7 @@ public class MainService {
 
     // Displays the instructions to play the game.
     public static void instructions() {
-        File file = new File("src/main/resources/Instructions.txt");
+        File file = new File("src/main/resources/instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
