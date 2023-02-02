@@ -1,5 +1,7 @@
 package stacs.wordle.mainService;
 
+import stacs.wordle.colorAssigner.ColorAssigner;
+import stacs.wordle.randomizer.Randomizer;
 import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
 
@@ -9,49 +11,138 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * The MainService class is responsible for the logic of the game.
+ *
+ * @author 220031985
+ * @version 1.0
+ * @Date 2023-02-02
+ */
 public class MainService {
 
+    // https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
     // Wordle Color Constants
-    public static final String YELLOW = "#FFFF00";
-    public static final String GREEN = "#00FF00";
-    public static final String GREY = "#808080";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
 
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
     private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
+
+    private static final Randomizer randomizer = new Randomizer();
+
+    private static final ColorAssigner colorAssigner = new ColorAssigner();
     private static boolean gameStatus = true;
 
-
+    /**
+     * The main method that holds the logic for the game.
+     */
     public static void playGame() {
         ArrayList<String> guessWords = new ArrayList<>();
         general_message();
-        System.out.println("Enter a 5 letter word: ");
-        String input = scanner.nextLine();
-        input = input.trim().toLowerCase();
+        wordleKeyboard.initialState();
+        String randomWord = randomizer.getRandomWord().trim().toLowerCase();
+        int attempts = 0;
 
         while (gameStatus) {
+            System.out.println("Enter a 5 letter word: ");
+            String input = scanner.nextLine();
+            // Standardizing the input.
+            input = input.trim().toLowerCase();
             if (input.equals("exit")) {
                 System.out.println("Exiting the game");
-                exitGame();
+                gameStatus = false;
             } else if (input.equals("restart")) {
                 System.out.println("Restarting the game");
                 restartGame();
 
             } else if (WordChecker.checkIfValid(input)) {
                 guessWords.add(input);
-
-
+                drawWordle(guessWords, randomWord);
+                if (guessWords.get(attempts).equals(randomWord)) {
+                    gameStatus = false;
+                    if (attempts == 0) {
+                        System.out.println("You guessed the word in " + attempts + " attempt. You are a genius !");
+                    } else {
+                        System.out.println("You guessed the word in " + (attempts + 1) + " attempts. You are a genius !");
+                    }
+                    gameStatus = false;
+                } else if (attempts == 5) {
+                    System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase());
+                    gameStatus = false;
+                }
+                attempts += 1;
             } else {
-                System.out.println("Invalid input..Exiting the game !");
-                exitGame();
+                System.out.println("Not in the dictionary.");
             }
         }
+        scanner.close();
     }
 
-    private static boolean exitGame() {
-        return gameStatus = false;
 
+    private static void drawWordle(ArrayList<String> guessWords, String randomWord) {
+        for (int i = 0; i < guessWords.size(); i++) {
+            for (int j = 0; j < 5; j++) {
+
+                String charUpper = guessWords.get(i).substring(j, j + 1).toUpperCase();
+                String charLower = guessWords.get(i).substring(j, j + 1).toLowerCase();
+                int colorCode = ColorAssigner.colorAssigner(randomWord, charUpper, j);
+                switch (colorCode) {
+                    case 0:
+                        wordleKeyboard.alphabets.replace(charLower, 0);
+                        System.out.print("[" + charUpper + "]");
+                        break;
+                    case 1:
+                        wordleKeyboard.alphabets.replace(charLower, 1);
+                        System.out.print("[" +YELLOW +charUpper +RESET+ "]");
+                        break;
+                    case 2:
+                        wordleKeyboard.alphabets.replace(charLower, 2);
+                        System.out.print("[" +GREEN+ charUpper +RESET+ "]");
+                        break;
+                    default:
+                        wordleKeyboard.alphabets.replace(charLower, 3);
+                        break;
+                }
+            }
+            System.out.println('\n');
+        }
+        for (int gridLength = guessWords.size(); gridLength < 6; gridLength++) {
+            System.out.println("[x] [x] [x] [x] [x]\n");
+        }
+        drawKeyboard();
     }
+
+    public static void drawKeyboard() {
+        System.out.println("Keyboard");
+        for (int i = 0; i < 26; i++) {
+            switch (i) {
+                case 10:
+                    System.out.println();
+                case 19:
+                    System.out.println("\n");
+            }
+            switch (wordleKeyboard.alphabets.get(wordleKeyboard.keyboardLayout[i].toLowerCase())) {
+                case 0:
+                    System.out.print("[" + RED + wordleKeyboard.keyboardLayout[i] + RESET + "]");
+                    break;
+                case 1:
+                    System.out.print("[" + YELLOW + wordleKeyboard.keyboardLayout[i] + RESET + "]");
+                    break;
+                case 2:
+                    System.out.print("[" + GREEN + wordleKeyboard.keyboardLayout[i] + RESET + "]");
+                    break;
+                default:
+                    System.out.print("[" + wordleKeyboard.keyboardLayout[i] + "]");
+                    break;
+            }
+        }
+        System.out.println("\n");
+    }
+
+
 
     private static void restartGame() {
         playGame();

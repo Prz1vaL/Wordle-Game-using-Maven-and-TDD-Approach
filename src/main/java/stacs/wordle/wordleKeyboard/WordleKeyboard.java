@@ -8,18 +8,18 @@ import java.util.Hashtable;
  * @author 220031985
  */
 public class WordleKeyboard {
-    String keyboardLayout[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"};
-    Hashtable<String, Integer> alphabets = new Hashtable<>();
+    public String[] keyboardLayout = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"};
+   public Hashtable<String, Integer> alphabets = new Hashtable<>();
 
     public WordleKeyboard() {
-        InitialState();
+        initialState();
     }
 
 
     //  Resetting the keyboard layout.
     // '3' is given as default value as 0,1,2 are defined as states in the game.
 
-    private void InitialState() {
+    public void initialState() {
         alphabets.put("a", 3);
         alphabets.put("b", 3);
         alphabets.put("c", 3);
