@@ -9,7 +9,7 @@ public class Assigner {
             return 2;
         } else {
             for (int j = 0; j < randomWord.length(); j++) {
-                if (char_corrected.equals(randomWord.substring(j, j + 1))){
+                if (char_corrected.equals(randomWord.substring(j, j + 1))) {
                     return 1;
                 }
             }

@@ -26,14 +26,11 @@ public class MainService {
     public static final String GREEN = "\u001B[32m";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
-
+    private static final Randomizer randomizer = new Randomizer();
+    private static final Assigner ASSIGNER = new Assigner();
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
     private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
-
-    private static final Randomizer randomizer = new Randomizer();
-
-    private static final Assigner ASSIGNER = new Assigner();
     private static boolean gameStatus = true;
 
     /**
@@ -88,19 +85,19 @@ public class MainService {
 
                 String charUpper = guessWords.get(i).substring(j, j + 1).toUpperCase();
                 String charLower = guessWords.get(i).substring(j, j + 1).toLowerCase();
-                 int code = Assigner.assigner(randomWord, charUpper, j);
+                int code = Assigner.assigner(randomWord, charUpper, j);
                 switch (code) {
                     case 0:
                         wordleKeyboard.alphabets.replace(charLower, 0);
-                        System.out.print("["+ RED + charUpper + RESET +"]");
+                        System.out.print("[" + RED + charUpper + RESET + "]");
                         break;
                     case 1:
                         wordleKeyboard.alphabets.replace(charLower, 1);
-                        System.out.print("[" + YELLOW +charUpper + RESET +"]");
+                        System.out.print("[" + YELLOW + charUpper + RESET + "]");
                         break;
                     case 2:
                         wordleKeyboard.alphabets.replace(charLower, 2);
-                        System.out.print("[" + GREEN +charUpper + RESET+"]");
+                        System.out.print("[" + GREEN + charUpper + RESET + "]");
                         break;
                 }
             }
@@ -110,9 +107,6 @@ public class MainService {
             System.out.println("[x] [x] [x] [x] [x]\n");
         }
     }
-
-
-
 
 
     private static void restartGame() {

@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class WordChecker {
     static File wordGuess = new File("src/main/resources/wordlist.txt");
 
-    public static boolean checkIfValid(String input){
+    public static boolean checkIfValid(String input) {
         try {
             Scanner scanner = new Scanner(wordGuess);
-            while(scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 String data = scanner.nextLine();
-                if(data.equals(input)){
+                if (data.equals(input)) {
                     return true;
                 }
             }
