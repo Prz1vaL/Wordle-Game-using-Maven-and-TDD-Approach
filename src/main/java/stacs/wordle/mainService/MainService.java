@@ -1,6 +1,6 @@
 package stacs.wordle.mainService;
 
-import stacs.wordle.colorAssigner.ColorAssigner;
+import stacs.wordle.assigner.Assigner;
 import stacs.wordle.randomizer.Randomizer;
 import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
@@ -33,7 +33,7 @@ public class MainService {
 
     private static final Randomizer randomizer = new Randomizer();
 
-    private static final ColorAssigner colorAssigner = new ColorAssigner();
+    private static final Assigner ASSIGNER = new Assigner();
     private static boolean gameStatus = true;
 
     /**
@@ -88,22 +88,19 @@ public class MainService {
 
                 String charUpper = guessWords.get(i).substring(j, j + 1).toUpperCase();
                 String charLower = guessWords.get(i).substring(j, j + 1).toLowerCase();
-                int colorCode = ColorAssigner.colorAssigner(randomWord, charUpper, j);
-                switch (colorCode) {
+                 int code = Assigner.assigner(randomWord, charUpper, j);
+                switch (code) {
                     case 0:
                         wordleKeyboard.alphabets.replace(charLower, 0);
-                        System.out.print("[" + charUpper + "]");
+                        System.out.print("["+ RED + charUpper + RESET +"]");
                         break;
                     case 1:
                         wordleKeyboard.alphabets.replace(charLower, 1);
-                        System.out.print("[" +YELLOW +charUpper +RESET+ "]");
+                        System.out.print("[" + YELLOW +charUpper + RESET +"]");
                         break;
                     case 2:
                         wordleKeyboard.alphabets.replace(charLower, 2);
-                        System.out.print("[" +GREEN+ charUpper +RESET+ "]");
-                        break;
-                    default:
-                        wordleKeyboard.alphabets.replace(charLower, 3);
+                        System.out.print("[" + GREEN +charUpper + RESET+"]");
                         break;
                 }
             }
@@ -112,35 +109,9 @@ public class MainService {
         for (int gridLength = guessWords.size(); gridLength < 6; gridLength++) {
             System.out.println("[x] [x] [x] [x] [x]\n");
         }
-        drawKeyboard();
     }
 
-    public static void drawKeyboard() {
-        System.out.println("Keyboard");
-        for (int i = 0; i < 26; i++) {
-            switch (i) {
-                case 10:
-                    System.out.println();
-                case 19:
-                    System.out.println("\n");
-            }
-            switch (wordleKeyboard.alphabets.get(wordleKeyboard.keyboardLayout[i].toLowerCase())) {
-                case 0:
-                    System.out.print("[" + RED + wordleKeyboard.keyboardLayout[i] + RESET + "]");
-                    break;
-                case 1:
-                    System.out.print("[" + YELLOW + wordleKeyboard.keyboardLayout[i] + RESET + "]");
-                    break;
-                case 2:
-                    System.out.print("[" + GREEN + wordleKeyboard.keyboardLayout[i] + RESET + "]");
-                    break;
-                default:
-                    System.out.print("[" + wordleKeyboard.keyboardLayout[i] + "]");
-                    break;
-            }
-        }
-        System.out.println("\n");
-    }
+
 
 
 
