@@ -1,6 +1,6 @@
-package stacs.wordle.assigner;
+package stacs.wordle.colorAssigner;
 
-public class Assigner {
+public class ColorAssigner {
 
 
     public static int assigner(String randomWord, String character, int i) {

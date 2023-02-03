@@ -1,6 +1,6 @@
 package stacs.wordle.mainService;
 
-import stacs.wordle.assigner.Assigner;
+import stacs.wordle.colorAssigner.ColorAssigner;
 import stacs.wordle.randomizer.Randomizer;
 import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
@@ -27,7 +27,7 @@ public class MainService {
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     private static final Randomizer randomizer = new Randomizer();
-    private static final Assigner ASSIGNER = new Assigner();
+
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
     private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
@@ -80,12 +80,12 @@ public class MainService {
 
 
     private static void drawWordle(ArrayList<String> guessWords, String randomWord) {
-        for (int i = 0; i < guessWords.size(); i++) {
+        for (String guessWord : guessWords) {
             for (int j = 0; j < 5; j++) {
 
-                String charUpper = guessWords.get(i).substring(j, j + 1).toUpperCase();
-                String charLower = guessWords.get(i).substring(j, j + 1).toLowerCase();
-                int code = Assigner.assigner(randomWord, charUpper, j);
+                String charUpper = guessWord.substring(j, j + 1).toUpperCase();
+                String charLower = guessWord.substring(j, j + 1).toLowerCase();
+                int code = ColorAssigner.assigner(randomWord, charUpper, j);
                 switch (code) {
                     case 0:
                         wordleKeyboard.alphabets.replace(charLower, 0);
