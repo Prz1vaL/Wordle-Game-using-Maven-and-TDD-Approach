@@ -61,13 +61,13 @@ public class MainService {
                 if (guessWords.get(attempts).equals(randomWord)) {
                     gameStatus = false;
                     if (attempts == 0) {
-                        System.out.println("You guessed the word in " + attempts + " attempt. You are a genius !");
+                        System.out.println("You guessed the word in " + (attempts + 1) + " attempt. You are a genius !");
                     } else {
                         System.out.println("You guessed the word in " + (attempts + 1) + " attempts. You are a genius !");
                     }
                     gameStatus = false;
                 } else if (attempts == 5) {
-                    System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase());
+                    System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase() + ". Better luck next time!");
                     gameStatus = false;
                 }
                 attempts += 1;
