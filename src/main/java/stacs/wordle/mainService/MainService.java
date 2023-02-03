@@ -115,7 +115,7 @@ public class MainService {
 
 
     // Displays the instructions to play the game.
-    public static void instructions() {
+    public static short instructions() {
         File file = new File("src/main/resources/instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
@@ -127,6 +127,7 @@ public class MainService {
         }
 
 
+        return 0;
     }
 
 
