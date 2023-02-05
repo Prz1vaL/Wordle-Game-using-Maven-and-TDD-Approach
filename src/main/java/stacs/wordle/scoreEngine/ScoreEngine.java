@@ -13,7 +13,7 @@ public class ScoreEngine {
         private static final float MAX_ATTEMPTS = 6;
         private static final float MAX_SCORE = 100;
         private static final float MIN_SCORE = 0;
-        private static final double SCORE_PER_ATTEMPT = 16.67;
+        private static final double SCORE_PER_ATTEMPT = (MAX_SCORE / MAX_ATTEMPTS);
 
         private static final MainService MAIN_SERVICE = new MainService();
 
@@ -25,7 +25,7 @@ public class ScoreEngine {
         * @return The score of the player.
         */
         public static double calculateScore(int attempts) {
-            double score = MAX_SCORE - (attempts * SCORE_PER_ATTEMPT);
+            double score = Math.round(MAX_SCORE - (attempts * SCORE_PER_ATTEMPT));
             if (score < MIN_SCORE) {
                 score = MIN_SCORE;
             }
