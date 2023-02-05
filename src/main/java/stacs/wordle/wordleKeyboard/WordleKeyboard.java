@@ -3,7 +3,7 @@ package stacs.wordle.wordleKeyboard;
 import java.util.Hashtable;
 
 /**
- * This class is the keyboard layout fo the wordle game.It is a 2D array of the alphabets.
+ * This class sets the keyboard layout for the wordle game.It is a 2D array of the alphabets and keys that hold the state of the color.
  *
  * @author 220031985
  */
@@ -17,7 +17,7 @@ public class WordleKeyboard {
 
 
     //  Resetting the keyboard layout.
-    // '3' is given as default value as 0,1,2 are defined as states in the game.
+    // '3' is given as default value as 0,1,2 are defined as color states in the game.
 
     public void initialState() {
         alphabets.put("a", 3);

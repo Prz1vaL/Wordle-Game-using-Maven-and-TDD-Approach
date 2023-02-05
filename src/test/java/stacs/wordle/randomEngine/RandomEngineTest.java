@@ -1,16 +1,16 @@
-package stacs.wordle.randomizer;
+package stacs.wordle.randomEngine;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class RandomizerTest {
+class RandomEngineTest {
 
     @Test
     void getRandomWord() {
 
-        Randomizer randomizer = new Randomizer();
-        String randomWord = randomizer.getRandomWord();
+        RandomEngine randomEngine = new RandomEngine();
+        String randomWord = randomEngine.getRandomWord();
         assertTrue(randomWord.equals("debug") || randomWord.equals("maven") || randomWord.equals("cache"));
     }
 }

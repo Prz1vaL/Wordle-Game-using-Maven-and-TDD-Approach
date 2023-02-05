@@ -1,11 +1,11 @@
-package stacs.wordle.randomizer;
+package stacs.wordle.randomEngine;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Randomizer {
+public class RandomEngine {
 
     File randomWords = new File("src/test/resources/wordlist-test.txt");
     Random random = new Random();

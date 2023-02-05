@@ -1,7 +1,7 @@
 package stacs.wordle.mainService;
 
 import stacs.wordle.colorAssigner.ColorAssigner;
-import stacs.wordle.randomizer.Randomizer;
+import stacs.wordle.randomEngine.RandomEngine;
 import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
 
@@ -26,7 +26,7 @@ public class MainService {
     public static final String GREEN = "\u001B[32m";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
-    private static final Randomizer randomizer = new Randomizer();
+    private static final RandomEngine RANDOM_ENGINE = new RandomEngine();
 
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class MainService {
         ArrayList<String> guessWords = new ArrayList<>();
         general_message();
         wordleKeyboard.initialState();
-        String randomWord = randomizer.getRandomWord().trim().toLowerCase();
+        String randomWord = RANDOM_ENGINE.getRandomWord().trim().toLowerCase();
         int attempts = 0;
 
         while (gameStatus) {
