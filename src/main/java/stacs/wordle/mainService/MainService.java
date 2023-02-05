@@ -2,6 +2,7 @@ package stacs.wordle.mainService;
 
 import stacs.wordle.colorAssigner.ColorAssigner;
 import stacs.wordle.randomEngine.RandomEngine;
+import stacs.wordle.scoreEngine.ScoreEngine;
 import stacs.wordle.wordChecker.WordChecker;
 import stacs.wordle.wordleKeyboard.WordleKeyboard;
 
@@ -27,11 +28,14 @@ public class MainService {
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     private static final RandomEngine RANDOM_ENGINE = new RandomEngine();
+    private static final ScoreEngine SCORE_ENGINE = new ScoreEngine();
 
     // Declaring Scanner Variables and WordleKeyboard
     private static Scanner scanner = new Scanner(System.in);
     private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
     private static boolean gameStatus = true;
+
+    public static int attempts = 0;
 
     /**
      * The main method that holds the logic for the game.
@@ -41,7 +45,7 @@ public class MainService {
         general_message();
         wordleKeyboard.initialState();
         String randomWord = RANDOM_ENGINE.getRandomWord().trim().toLowerCase();
-        int attempts = 0;
+        attempts = 0;
 
         while (gameStatus) {
             System.out.println("Enter a 5 letter word: ");
@@ -62,12 +66,15 @@ public class MainService {
                     gameStatus = false;
                     if (attempts == 0) {
                         System.out.println("You guessed the word in " + (attempts + 1) + " attempt. You are a genius !");
+                        SCORE_ENGINE.calculateScore(attempts);
                     } else {
                         System.out.println("You guessed the word in " + (attempts + 1) + " attempts. You are a genius !");
+                        SCORE_ENGINE.calculateScore(attempts);
                     }
                     gameStatus = false;
                 } else if (attempts == 5) {
                     System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase() + ". Better luck next time!");
+                    SCORE_ENGINE.calculateScore(attempts);
                     gameStatus = false;
                 }
                 attempts += 1;

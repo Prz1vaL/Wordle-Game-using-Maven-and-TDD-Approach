@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: stacs.wordle.mainService.MainServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in stacs.wordle.mainService.MainServiceTest
+instructions  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+expected: <Welcome to CS5031 - Wordle
+The aim of the game is to guess the word that has been randomly selected.
+You will be given 10 chances to guess the word.
+You will be given a hint after every incorrect guess.
+The hint will show you the number of letters in the word and the number of letters you have guessed correctly.
+You will be given a score based on the number of letters you have guessed correctly.
+The game will end when you have guessed the word or you have used all your chances.
+Good luck!
+> but was: <0>
+	at stacs.wordle.mainService.MainServiceTest.instructions(MainServiceTest.java:12)
+

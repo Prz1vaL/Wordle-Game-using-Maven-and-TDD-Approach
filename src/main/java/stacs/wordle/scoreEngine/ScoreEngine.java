@@ -17,7 +17,7 @@ public class ScoreEngine {
 
         private static final MainService MAIN_SERVICE = new MainService();
 
-        int attempts = MAIN_SERVICE.attempts;
+
 
         /**
         * The method calculates the score of the player.
