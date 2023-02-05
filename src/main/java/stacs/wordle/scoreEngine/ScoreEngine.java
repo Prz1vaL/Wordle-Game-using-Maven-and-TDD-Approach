@@ -25,9 +25,9 @@ public class ScoreEngine {
         * @return The score of the player.
         */
         public static double calculateScore(int attempts) {
-            double score = Math.round(MAX_SCORE - (attempts * SCORE_PER_ATTEMPT));
+            double score = (100.0 - Math.round(MAX_SCORE - (attempts * SCORE_PER_ATTEMPT)));
             if (score < MIN_SCORE) {
-                score = MIN_SCORE;
+                score = (100- MIN_SCORE);
             }
             return score;
         }

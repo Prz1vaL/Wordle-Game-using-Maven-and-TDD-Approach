@@ -38,7 +38,8 @@ public class MainService {
     public static int attempts = 0;
 
     private static int attemptActual;
-    public static double scoreHolder = SCORE_ENGINE.calculateScore(attemptActual);
+    private static double scoreHolder;
+
 
     /**
      * The main method that holds the logic for the game.
@@ -68,12 +69,13 @@ public class MainService {
                 if (guessWords.get(attempts).equals(randomWord)) {
                     gameStatus = false;
                     attemptActual = attempts + 1;
+                    scoreHolder = SCORE_ENGINE.calculateScore(attemptActual);
                     if (attempts == 0) {
                         System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
-                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder);
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
                     } else {
-                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a genius !");
-                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempts was " + scoreHolder);
+                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempts was " + scoreHolder + " %");
                     }
                     gameStatus = false;
                 } else if (attempts == 5) {

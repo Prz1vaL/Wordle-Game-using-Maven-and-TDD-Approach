@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.wordChecker.WordCheckerTest" time="0.073" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="stacs.wordle.wordChecker.WordCheckerTest" time="0.042" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="18"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-18.0.2.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/apm30/Documents/GitHub/Wordle/target/surefire/surefirebooter6301574178377718840.jar /Users/apm30/Documents/GitHub/Wordle/target/surefire 2023-02-03T14-40-33_221-jvmRun1 surefire14308003465650025511tmp surefire_012426520209354481460tmp"/>
+    <property name="sun.java.command" value="/Users/apm30/Documents/GitHub/Wordle/target/surefire/surefirebooter16553404802959110977.jar /Users/apm30/Documents/GitHub/Wordle/target/surefire 2023-02-05T19-36-09_465-jvmRun1 surefire3244050122909411459tmp surefire_016899344693148939972tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/apm30/Documents/GitHub/Wordle/target/test-classes:/Users/apm30/Documents/GitHub/Wordle/target/classes:/Users/apm30/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/apm30/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/apm30/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/apm30/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/apm30/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/apm30/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
@@ -29,7 +29,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/apm30/Documents/GitHub/Wordle/target/surefire/surefirebooter6301574178377718840.jar"/>
+    <property name="surefire.real.class.path" value="/Users/apm30/Documents/GitHub/Wordle/target/surefire/surefirebooter16553404802959110977.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="18.0.2.1+1-1"/>
@@ -55,5 +55,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="62.0"/>
   </properties>
-  <testcase name="checkIfValid" classname="stacs.wordle.wordChecker.WordCheckerTest" time="0.07"/>
+  <testcase name="checkIfValid" classname="stacs.wordle.wordChecker.WordCheckerTest" time="0.04"/>
 </testsuite>

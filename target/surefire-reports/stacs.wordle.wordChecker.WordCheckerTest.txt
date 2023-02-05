@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: stacs.wordle.wordChecker.WordCheckerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.073 s - in stacs.wordle.wordChecker.WordCheckerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in stacs.wordle.wordChecker.WordCheckerTest

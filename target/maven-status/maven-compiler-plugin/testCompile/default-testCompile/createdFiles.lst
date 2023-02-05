@@ -1,3 +1,5 @@
 stacs/wordle/wordChecker/WordCheckerTest.class
+stacs/wordle/scoreEngine/ScoreEngineTest.class
 stacs/wordle/mainService/MainServiceTest.class
-stacs/wordle/randomizer/RandomizerTest.class
+stacs/wordle/randomEngine/RandomEngineTest.class
+stacs/wordle/WordleAppTest.class

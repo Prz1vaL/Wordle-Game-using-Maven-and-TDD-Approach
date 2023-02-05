@@ -8,7 +8,7 @@ class ScoreEngineTest {
 
     @Test
     void calculateScore() {
-        assertEquals(100, ScoreEngine.calculateScore(0));
-        assertEquals(17, ScoreEngine.calculateScore(5));
+        assertEquals(17.0, ScoreEngine.calculateScore(1));
+        assertEquals(83.0, ScoreEngine.calculateScore(5));
     }
 }
