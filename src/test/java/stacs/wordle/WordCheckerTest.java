@@ -1,4 +1,4 @@
-package stacs.wordle.wordChecker;
+package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 import stacs.wordle.WordChecker;

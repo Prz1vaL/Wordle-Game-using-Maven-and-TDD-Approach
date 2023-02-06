@@ -2,7 +2,7 @@ package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 
-class WordleAppTest {
+class ClassLoaderTest {
 
     @Test
     void main() throws ClassNotFoundException {
