@@ -1,6 +1,4 @@
-package stacs.wordle.scoreEngine;
-
-import stacs.wordle.mainService.MainService;
+package stacs.wordle;
 
 /**
  * The ScoreEngine class is responsible for calculating the score of the player.
@@ -9,6 +7,9 @@ import stacs.wordle.mainService.MainService;
  * @Date 2023-02-05
  */
 public class ScoreEngine {
+
+
+
 
         private static final float MAX_ATTEMPTS = 6;
         private static final float MAX_SCORE = 100;

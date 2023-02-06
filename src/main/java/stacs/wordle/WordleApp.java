@@ -1,7 +1,5 @@
 package stacs.wordle;
 
-import stacs.wordle.mainService.MainService;
-
 /**
  * WordleApp is the main class of the Wordle game.
  * It is responsible for loading the wordlist and starting the game.

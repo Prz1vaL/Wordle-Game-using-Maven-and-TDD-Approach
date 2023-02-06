@@ -1,6 +1,7 @@
 package stacs.wordle.randomEngine;
 
 import org.junit.jupiter.api.Test;
+import stacs.wordle.RandomEngine;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

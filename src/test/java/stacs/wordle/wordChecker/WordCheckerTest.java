@@ -1,6 +1,7 @@
 package stacs.wordle.wordChecker;
 
 import org.junit.jupiter.api.Test;
+import stacs.wordle.WordChecker;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

@@ -1,4 +1,4 @@
-package stacs.wordle.colorAssigner;
+package stacs.wordle;
 
 public class ColorAssigner {
 

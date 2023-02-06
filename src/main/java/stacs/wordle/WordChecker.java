@@ -1,4 +1,4 @@
-package stacs.wordle.wordChecker;
+package stacs.wordle;
 
 import java.io.File;
 import java.io.FileNotFoundException;
