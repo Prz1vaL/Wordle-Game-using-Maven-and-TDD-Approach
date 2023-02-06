@@ -3,7 +3,7 @@ package stacs.wordle.scoreEngine;
 import stacs.wordle.mainService.MainService;
 
 /**
- * The ScoreEngine class is responsible for calculating the score of the player.
+ * The ScoreEngine class is responsible for calculating the probability of the player guessing the word.
  * @author 220031985
  * @version 1.0
  * @Date 2023-02-05
