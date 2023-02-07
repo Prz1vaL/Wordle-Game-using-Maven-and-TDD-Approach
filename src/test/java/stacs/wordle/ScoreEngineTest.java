@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ScoreEngineTest {
 
     @Test
-    void calculateScore() {
+    void testCalculateScore() {
         assertEquals(17.0, ScoreEngine.calculateScore(1));
         assertEquals(83.0, ScoreEngine.calculateScore(5));
     }

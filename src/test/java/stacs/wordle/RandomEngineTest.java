@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RandomEngineTest {
 
     @Test
-    void getRandomWord() {
+    void testGetRandomWord() {
 
         RandomEngine randomEngine = new RandomEngine();
         String randomWord = randomEngine.getRandomWord();
