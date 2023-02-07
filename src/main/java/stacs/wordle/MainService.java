@@ -1,10 +1,4 @@
-package stacs.wordle.mainService;
-
-import stacs.wordle.colorAssigner.ColorAssigner;
-import stacs.wordle.randomEngine.RandomEngine;
-import stacs.wordle.scoreEngine.ScoreEngine;
-import stacs.wordle.wordChecker.WordChecker;
-import stacs.wordle.wordleKeyboard.WordleKeyboard;
+package stacs.wordle;
 
 import java.io.BufferedReader;
 import java.io.File;

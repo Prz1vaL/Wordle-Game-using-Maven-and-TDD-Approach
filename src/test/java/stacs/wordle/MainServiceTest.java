@@ -1,4 +1,4 @@
-package stacs.wordle.mainService;
+package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 

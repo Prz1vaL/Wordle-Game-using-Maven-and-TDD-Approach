@@ -1,6 +1,7 @@
-package stacs.wordle.scoreEngine;
+package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
+import stacs.wordle.ScoreEngine;
 
 import static org.junit.jupiter.api.Assertions.*;
 

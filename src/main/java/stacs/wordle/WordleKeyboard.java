@@ -1,4 +1,4 @@
-package stacs.wordle.wordleKeyboard;
+package stacs.wordle;
 
 import java.util.Hashtable;
 
