@@ -1,5 +1,5 @@
-/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/wordChecker/WordCheckerTest.java
-/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/mainService/MainServiceTest.java
-/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/scoreEngine/ScoreEngineTest.java
-/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/randomEngine/RandomEngineTest.java
-/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/WordleAppTest.java
+/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/ClassLoaderTest.java
+/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/WordCheckerTest.java
+/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/RandomEngineTest.java
+/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/ScoreEngineTest.java
+/Users/apm30/Documents/GitHub/Wordle/src/test/java/stacs/wordle/MainServiceTest.java
