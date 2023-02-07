@@ -1,0 +1,7 @@
+stacs/wordle/WordleApp.class
+stacs/wordle/ScoreEngine.class
+stacs/wordle/MainService.class
+stacs/wordle/ColorAssigner.class
+stacs/wordle/RandomEngine.class
+stacs/wordle/WordChecker.class
+stacs/wordle/WordleKeyboard.class

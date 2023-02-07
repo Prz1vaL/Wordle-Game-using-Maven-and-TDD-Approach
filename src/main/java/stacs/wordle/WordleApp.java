@@ -12,8 +12,8 @@ package stacs.wordle;
 public class WordleApp {
     public static void main(String[] args) {
         System.out.println("Welcome to CS5031 - Wordle");
-        MainService.instructions();
-        MainService.playGame();
+          MainService.instructions();
+          MainService.playGame();
     }
 
 }
