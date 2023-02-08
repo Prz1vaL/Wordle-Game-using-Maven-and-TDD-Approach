@@ -16,7 +16,7 @@ public class ScoreEngine {
         private static final float MIN_SCORE = 0;
         private static final double SCORE_PER_ATTEMPT = (MAX_SCORE / MAX_ATTEMPTS);
 
-        private static final MainService MAIN_SERVICE = new MainService();
+        private static final GameEngine MAIN_SERVICE = new GameEngine();
 
 
 

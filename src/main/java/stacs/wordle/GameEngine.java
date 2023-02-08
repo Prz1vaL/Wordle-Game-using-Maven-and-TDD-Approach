@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * The MainService class is responsible for the logic of the game.
+ * The GameEngine class is responsible for the logic of the game.
  *
  * @author 220031985
  * @version 1.0
  * @Date 2023-02-02
  */
-public class MainService {
+public class GameEngine {
 
     // https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
     // Wordle Color Constants
