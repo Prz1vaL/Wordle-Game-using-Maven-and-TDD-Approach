@@ -23,16 +23,19 @@ public class GameEngine {
     public static final String RED = "\u001B[31m";
     private static final RandomEngine RANDOM_ENGINE = new RandomEngine();
     private static final ScoreEngine SCORE_ENGINE = new ScoreEngine();
-
-    // Declaring Scanner Variables and WordleKeyboard
-    private static Scanner scanner = new Scanner(System.in);
-    private static WordleKeyboard wordleKeyboard = new WordleKeyboard();
-    private static boolean gameStatus = true;
-
     public static int attempts = 0;
-
+    // Declaring Scanner Variables and WordleKeyboard
+    private static final Scanner scanner = new Scanner(System.in);
+    private static final WordleKeyboard wordleKeyboard = new WordleKeyboard();
+    private static boolean gameStatus = true;
+    private static final ArrayList<String> alphabets = new ArrayList<>();
     private static int attemptActual;
+    private static int gamesPlayed;
+
+    private static int gamesWon;
     private static double scoreHolder;
+
+    private static double guessDistribution;
 
 
     /**
@@ -63,10 +66,12 @@ public class GameEngine {
                 if (guessWords.get(attempts).equals(randomWord)) {
                     gameStatus = false;
                     attemptActual = attempts + 1;
-                    scoreHolder = SCORE_ENGINE.calculateScore(attemptActual);
+                    scoreHolder = ScoreEngine.calculateScore(attemptActual);
+                    guessDistribution = ScoreEngine.guessDistribution(gamesPlayed,gamesWon);
                     if (attempts == 0) {
                         System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
                         System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
+                        System.out.println("The Guess Distribution " + attemptActual + " attempt was " + scoreHolder + " %");
                     } else {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
                         System.out.println("The probability of you guessing the word in " + attemptActual + " attempts was " + scoreHolder + " %");
@@ -87,6 +92,10 @@ public class GameEngine {
 
 
     private static void drawWordle(ArrayList<String> guessWords, String randomWord) {
+        for (int i = 0; i < 21; i++) {
+            System.out.print("*");
+        }
+        System.out.println("\n");
         for (String guessWord : guessWords) {
             for (int j = 0; j < 5; j++) {
 
@@ -96,23 +105,48 @@ public class GameEngine {
                 switch (code) {
                     case 0:
                         wordleKeyboard.alphabets.replace(charLower, 0);
-                        System.out.print("[" + RED + charUpper + RESET + "]");
+                        System.out.print("[" + RED + charUpper + RESET + "] ");
                         break;
+
                     case 1:
                         wordleKeyboard.alphabets.replace(charLower, 1);
-                        System.out.print("[" + YELLOW + charUpper + RESET + "]");
+                        if (alphabets.isEmpty()) {
+                            System.out.print("[" + YELLOW + charUpper + RESET + "] ");
+                            alphabets.add(charLower);
+                            break;
+                        } else {
+                            for (String s : alphabets) {
+                                if (charLower.equals(s)) {
+                                    System.out.print("[" + RED + charUpper + RESET + "] ");
+                                    break;
+                                } else {
+                                    System.out.print("[" + YELLOW + charUpper + RESET + "] ");
+                                    alphabets.add(charLower);
+                                    break;
+                                }
+
+                            }
+                        }
                         break;
                     case 2:
                         wordleKeyboard.alphabets.replace(charLower, 2);
-                        System.out.print("[" + GREEN + charUpper + RESET + "]");
+                        System.out.print("[" + GREEN + charUpper + RESET + "] ");
                         break;
                 }
             }
-            System.out.println('\n');
+            alphabets.clear();
+            System.out.println();
         }
+
         for (int gridLength = guessWords.size(); gridLength < 6; gridLength++) {
-            System.out.println("[x] [x] [x] [x] [x]\n");
+            System.out.println("[x] [x] [x] [x] [x]");
         }
+        System.out.println();
+
+        for (int i = 0; i < 21; i++) {
+            System.out.print("*");
+        }
+        System.out.println(" ");
     }
 
 

@@ -3,6 +3,8 @@ package stacs.wordle;
 import org.junit.jupiter.api.Test;
 import stacs.wordle.RandomEngine;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RandomEngineTest {

@@ -16,7 +16,7 @@ public class ScoreEngine {
         private static final float MIN_SCORE = 0;
         private static final double SCORE_PER_ATTEMPT = (MAX_SCORE / MAX_ATTEMPTS);
 
-        private static final GameEngine MAIN_SERVICE = new GameEngine();
+
 
 
 
@@ -31,5 +31,9 @@ public class ScoreEngine {
                 score = (100- MIN_SCORE);
             }
             return score;
+        }
+
+        public static double guessDistribution(double gamesPlayed,double gamesWon){
+            return gamesPlayed / gamesWon;
         }
 }
