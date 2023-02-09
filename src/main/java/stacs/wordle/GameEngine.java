@@ -71,7 +71,7 @@ public class GameEngine {
                     if (attempts == 0) {
                         System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
                         System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
-                        System.out.println("The Guess Distribution " + attemptActual + " attempt was " + scoreHolder + " %");
+                        // TO BE IMPLEMENTED : System.out.println("The Guess Distribution " + attemptActual + " attempt was " + scoreHolder + " %");
                     } else {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
                         System.out.println("The probability of you guessing the word in " + attemptActual + " attempts was " + scoreHolder + " %");
