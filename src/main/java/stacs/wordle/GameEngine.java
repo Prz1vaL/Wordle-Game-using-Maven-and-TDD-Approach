@@ -94,8 +94,9 @@ public class GameEngine {
     /**
      * @param guessWords list of words guessed by the user.
      * @param randomWord the word to be guessed.
+     * @return
      */
-    private static void drawWordle(ArrayList<String> guessWords, String randomWord) {
+    public static void drawWordle(ArrayList<String> guessWords, String randomWord) {
         for (int i = 0; i < 21; i++) {
             System.out.print("*");
         }
