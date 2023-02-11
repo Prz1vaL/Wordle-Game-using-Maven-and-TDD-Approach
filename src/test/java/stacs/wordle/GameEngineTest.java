@@ -23,7 +23,11 @@ class GameEngineTest {
          guessedWords.add("cache");
         assertEquals(17.0, ScoreEngine.calculateScore(1));
         assertTrue(WordChecker.checkIfValid("debug"));
+        assertEquals((1), ColorAssigner.assigner("debug", "a",3));
+
     }
+
+
 
     @Test
     void testPlayGame() {
