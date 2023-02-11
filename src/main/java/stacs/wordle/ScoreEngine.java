@@ -33,6 +33,11 @@ public class ScoreEngine {
             return score;
         }
 
+    /**
+     * @param gamesPlayed
+     * @param gamesWon
+     * @return
+     */
         public static double guessDistribution(double gamesPlayed,double gamesWon){
             return gamesPlayed / gamesWon;
         }
