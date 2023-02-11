@@ -24,9 +24,9 @@ public class GameEngine {
     private static final RandomEngine RANDOM_ENGINE = new RandomEngine();
     private static final ScoreEngine SCORE_ENGINE = new ScoreEngine();
     public static int attempts = 0;
-    // Declaring Scanner Variables and WordleKeyboard
+    // Declaring Scanner Variables and WordleGridLayout
     private static final Scanner scanner = new Scanner(System.in);
-    private static final WordleKeyboard wordleKeyboard = new WordleKeyboard();
+    private static final WordleGridLayout WORDLE_GRID_LAYOUT = new WordleGridLayout();
     private static boolean gameStatus = true;
     private static final ArrayList<String> alphabets = new ArrayList<>();
     private static int attemptActual;
@@ -44,7 +44,7 @@ public class GameEngine {
     public static void playGame() {
         ArrayList<String> guessWords = new ArrayList<>();
         general_message();
-        wordleKeyboard.initialState();
+        WORDLE_GRID_LAYOUT.initialState();
         String randomWord = RANDOM_ENGINE.getRandomWord().trim().toLowerCase();
         attempts = 0;
 
@@ -108,12 +108,12 @@ public class GameEngine {
                 int code = ColorAssigner.assigner(randomWord, charUpper, j);
                 switch (code) {
                     case 0:
-                        wordleKeyboard.alphabets.replace(charLower, 0);
+                        WORDLE_GRID_LAYOUT.alphabets.replace(charLower, 0);
                         System.out.print("[" + RED + charUpper + RESET + "] ");
                         break;
 
                     case 1:
-                        wordleKeyboard.alphabets.replace(charLower, 1);
+                        WORDLE_GRID_LAYOUT.alphabets.replace(charLower, 1);
                         if (alphabets.isEmpty()) {
                             System.out.print("[" + YELLOW + charUpper + RESET + "] ");
                             alphabets.add(charLower);
@@ -133,7 +133,7 @@ public class GameEngine {
                         }
                         break;
                     case 2:
-                        wordleKeyboard.alphabets.replace(charLower, 2);
+                        WORDLE_GRID_LAYOUT.alphabets.replace(charLower, 2);
                         System.out.print("[" + GREEN + charUpper + RESET + "] ");
                         break;
                 }

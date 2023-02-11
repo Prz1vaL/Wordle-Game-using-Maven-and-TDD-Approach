@@ -2,7 +2,6 @@ package stacs.wordle;
 
 /**
  * Color States are allocated  in values of 0,1,2 where 0 is RED , 1 is YELLOW , 2 is GREEN.
- *
  * @author 220031985
  */
 public class ColorAssigner {

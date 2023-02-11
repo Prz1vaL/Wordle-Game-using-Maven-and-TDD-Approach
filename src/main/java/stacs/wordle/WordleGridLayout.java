@@ -3,19 +3,19 @@ package stacs.wordle;
 import java.util.Hashtable;
 
 /**
- * This class sets the keyboard layout for the wordle game.It is a 2D array of the alphabets and keys that hold the state of the color.
+ * This class sets the Grid-layout for the wordle game.It is a 2D array of the alphabets and keys that hold the state of the color.
  * @author 220031985
  */
-public class WordleKeyboard {
+public class WordleGridLayout {
 
     public Hashtable<String, Integer> alphabets = new Hashtable<>();
 
-    public WordleKeyboard() {
+    public WordleGridLayout() {
         initialState();
     }
 
 
-    //  Resetting the keyboard layout.
+    //  Resetting the Grid-layout.
     // '3' is given as default value as 0,1,2 are defined as color states in the game.
 
     public void initialState() {
