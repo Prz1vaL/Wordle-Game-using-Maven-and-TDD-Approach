@@ -15,6 +15,6 @@ class ScoreEngineTest {
 
     @Test
     void guessDistribution() {
-        assertEquals((45/23), ScoreEngine.guessDistribution(45, 23));
+        assertEquals((1.9565217391304348), ScoreEngine.guessDistribution(45, 23));
     }
 }
