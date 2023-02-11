@@ -5,6 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * This class is used to generate a random word from a list of words.
+ *
+ * @author 220031985
+ */
 public class RandomEngine {
 
     File randomWords = new File("src/test/resources/wordlist-test.txt");
@@ -12,6 +17,9 @@ public class RandomEngine {
     int randomInt = random.nextInt(3);
     int i = 0;
 
+    /**
+     * @return a random word from the list of words.
+     */
     public String getRandomWord() {
         try {
             Scanner scanner = new Scanner(randomWords);
@@ -25,6 +33,6 @@ public class RandomEngine {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        return "Out of Bounds";
+        return "ERROR";
     }
 }

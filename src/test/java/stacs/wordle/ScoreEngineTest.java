@@ -1,10 +1,14 @@
 package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
-import stacs.wordle.ScoreEngine;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for ScoreEngine
+ *
+ * @author 220031985
+ */
 class ScoreEngineTest {
 
     @Test

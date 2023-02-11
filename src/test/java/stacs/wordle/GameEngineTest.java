@@ -2,8 +2,11 @@ package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test class for GameEngine
+ *
+ * @author 220031985
+ */
 class GameEngineTest {
 
     @Test

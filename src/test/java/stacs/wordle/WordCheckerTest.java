@@ -1,11 +1,15 @@
 package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
-import stacs.wordle.WordChecker;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Test class for WordChecker
+ *
+ * @author 220031985
+ */
 class WordCheckerTest {
 
     @Test

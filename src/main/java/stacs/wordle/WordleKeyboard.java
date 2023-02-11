@@ -4,7 +4,6 @@ import java.util.Hashtable;
 
 /**
  * This class sets the keyboard layout for the wordle game.It is a 2D array of the alphabets and keys that hold the state of the color.
- *
  * @author 220031985
  */
 public class WordleKeyboard {

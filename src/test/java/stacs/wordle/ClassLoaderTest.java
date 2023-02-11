@@ -2,6 +2,11 @@ package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test class for checking if all classes are loaded.
+ *
+ * @author 220031985
+ */
 class ClassLoaderTest {
 
     @Test

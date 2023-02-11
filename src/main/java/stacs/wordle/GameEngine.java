@@ -91,6 +91,10 @@ public class GameEngine {
     }
 
 
+    /**
+     * @param guessWords list of words guessed by the user.
+     * @param randomWord the word to be guessed.
+     */
     private static void drawWordle(ArrayList<String> guessWords, String randomWord) {
         for (int i = 0; i < 21; i++) {
             System.out.print("*");
@@ -150,12 +154,17 @@ public class GameEngine {
     }
 
 
+    /**
+     * Restarts the game.
+     */
     private static void restartGame() {
         playGame();
     }
 
 
-    // Displays the instructions to play the game.
+    /**
+     * @return the instructions for the game.
+     */
     public static short instructions() {
         File file = new File("src/main/resources/instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -172,6 +181,9 @@ public class GameEngine {
     }
 
 
+    /**
+     * @return Important messages for the game.
+     */
     private static void general_message() {
         String instruction = "\n------------Type \"exit\" to exit or \"restart \" to restart the game------------------";
         System.out.println(instruction);
