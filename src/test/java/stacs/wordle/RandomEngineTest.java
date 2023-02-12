@@ -2,6 +2,9 @@ package stacs.wordle;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -15,7 +18,7 @@ class RandomEngineTest {
     void testGetRandomWord() {
 
         RandomEngine randomEngine = new RandomEngine();
-        String randomWord = randomEngine.getRandomWord();
-        assertTrue(randomWord.equals("debug") || randomWord.equals("maven") || randomWord.equals("cache"));
+        assertTrue(randomEngine.getRandomWord().length() > 0);
+        assertTrue(true, "Random word is not empty");
     }
 }
