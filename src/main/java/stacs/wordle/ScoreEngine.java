@@ -38,11 +38,11 @@ public class ScoreEngine {
      */
         public static double guessDistribution(double gamesPlayed,double gamesWon){
 
-            if(gamesPlayed / gamesWon != (1/0)){
-                return gamesPlayed / gamesWon;
+            if(gamesPlayed ==0 || gamesWon == 0){
+                return 0;
             }
             else {
-                return 0;
+                return gamesWon / gamesPlayed;
             }
         }
 }
