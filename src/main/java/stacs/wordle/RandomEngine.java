@@ -14,7 +14,7 @@ public class RandomEngine {
     File randomWords = new File("src/main/resources/wordlist.txt");
    // File randomWords = new File("src/test/resources/wordlist-test.txt");
     Random random = new Random();
-    int randomInt = random.nextInt(3);
+    int randomInt = random.nextInt(14855);
     int i = 0;
 
     /**

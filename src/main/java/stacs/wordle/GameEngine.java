@@ -106,15 +106,21 @@ public class GameEngine {
 
     private static void scoreCalculate() {
         scoreHolder = ScoreEngine.calculateScore(attemptActual);
-        guessDistribution = ScoreEngine.guessDistribution(gamesPlayed,gamesWon);
+        guessDistribution = ScoreEngine.guessDistribution(gamesPlayed, gamesWon);
     }
 
+    /**
+     * The method that holds game won logic.
+     */
     private static void gameWon() {
         gamesPlayed = gamesPlayed + 1;
         gamesWon = gamesWon + 1;
         attemptActual = attempts + 1;
     }
 
+    /**
+     * The method that displays the result/scoring logic.
+     */
     private static void resultMessage() {
         System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
         System.out.println("The Guess Distribution after playing " + gamesPlayed + " games is " + (guessDistribution * 100) + " %");
@@ -190,12 +196,11 @@ public class GameEngine {
     private static void restartGame() {
         playGame();
     }
-    
-
-    
 
 
-
+    /**
+     * The method that displays the instructions.
+     */
     public static void instructions() {
         File file = new File("src/main/resources/instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -210,13 +215,15 @@ public class GameEngine {
     }
 
 
+    /**
+     * The method that displays the general message to exit or restart the game.
+     */
     private static void general_message() {
         String instruction = "\n------------Type \"exit\" to exit or \"restart \" to restart the game------------------";
         System.out.println(instruction);
         String message = "\"\n---------------------------------Playing Game--------------------------------------\"";
         System.out.println(message);
     }
-
 
 
 }
