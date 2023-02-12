@@ -1,3 +1,3 @@
-# Wordle
+# Wordle Game using Maven and TDD Approach
 
-## CS5031 - Software Engineering Practice
+
