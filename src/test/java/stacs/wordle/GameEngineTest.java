@@ -17,10 +17,7 @@ class GameEngineTest {
 
     @Test
     void playGame() {
-       ArrayList <String> guessedWords = new ArrayList<>();
-         guessedWords.add("debug");
-         guessedWords.add("maven");
-         guessedWords.add("cache");
+
         assertEquals(17.0, ScoreEngine.calculateScore(1));
         assertTrue(WordChecker.checkIfValid("debug"));
         assertEquals((0), ColorAssigner.assigner("debug", "a",3));

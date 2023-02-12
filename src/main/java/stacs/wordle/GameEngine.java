@@ -64,23 +64,37 @@ public class GameEngine {
                 guessWords.add(input);
                 drawWordle(guessWords, randomWord);
                 if (guessWords.get(attempts).equals(randomWord)) {
-                    gameStatus = false;
-                    attemptActual = attempts + 1;
-                    scoreHolder = ScoreEngine.calculateScore(attemptActual);
-                    guessDistribution = ScoreEngine.guessDistribution(gamesPlayed,gamesWon);
+                    gameWon();
+                    scoreCalculate();
                     if (attempts == 0) {
-                        System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
-                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
-                        // TO BE IMPLEMENTED : System.out.println("The Guess Distribution " + attemptActual + " attempt was " + scoreHolder + " %");
-                    } else {
-                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
-                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempts was " + scoreHolder + " %");
-                    }
-                    gameStatus = false;
-                } else if (attempts == 5) {
-                    System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase() + ". Better luck next time!");
 
-                    gameStatus = false;
+                        System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
+                        resultMessage();
+                        restartGame();
+                    } else if (attempts == 1) {
+                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a worthy !");
+                        resultMessage();
+                        restartGame();
+                    } else if(attempts == 2) {
+                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a outstanding !");
+                        resultMessage();
+                        restartGame();
+                    } else if (attempts == 3 ) {
+                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
+                        resultMessage();
+                        restartGame();
+                    } else if (attempts == 4) {
+                        System.out.println("You guessed the word in " + attemptActual + " attempts. You are a average !");
+                        resultMessage();
+                        restartGame();
+                    }
+                } else if (attempts == 5) {
+                    gamesPlayed = gamesPlayed + 1;
+                    attemptActual = attempts + 1;
+                    scoreCalculate();
+                    System.out.println("You have exceeded the number of attempts. The word was " + randomWord.toUpperCase() + ". Better luck next time!");
+                    resultMessage();
+                    restartGame();
                 }
                 attempts += 1;
             } else {
@@ -88,6 +102,22 @@ public class GameEngine {
             }
         }
         scanner.close();
+    }
+
+    private static void scoreCalculate() {
+        scoreHolder = ScoreEngine.calculateScore(attemptActual);
+        guessDistribution = ScoreEngine.guessDistribution(gamesPlayed,gamesWon);
+    }
+
+    private static void gameWon() {
+        gamesPlayed = gamesPlayed + 1;
+        gamesWon = gamesWon + 1;
+        attemptActual = attempts + 1;
+    }
+
+    private static void resultMessage() {
+        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
+        System.out.println("The Guess Distribution after playing " + gamesPlayed + " games is " + (guessDistribution * 100) + " %");
     }
 
 
@@ -161,6 +191,9 @@ public class GameEngine {
     private static void restartGame() {
         playGame();
     }
+    
+
+    
 
 
     /**
@@ -191,5 +224,7 @@ public class GameEngine {
         String message = "\"\n---------------------------------Playing Game--------------------------------------\"";
         System.out.println(message);
     }
+
+
 
 }
