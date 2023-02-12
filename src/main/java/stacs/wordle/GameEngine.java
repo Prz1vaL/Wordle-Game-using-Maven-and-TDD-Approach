@@ -22,7 +22,7 @@ public class GameEngine {
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     private static final RandomEngine RANDOM_ENGINE = new RandomEngine();
-    private static final ScoreEngine SCORE_ENGINE = new ScoreEngine();
+
     public static int attempts = 0;
     // Declaring Scanner Variables and WordleGridLayout
     private static final Scanner scanner = new Scanner(System.in);
@@ -124,7 +124,7 @@ public class GameEngine {
     /**
      * @param guessWords list of words guessed by the user.
      * @param randomWord the word to be guessed.
-     * @return
+     *
      */
     public static void drawWordle(ArrayList<String> guessWords, String randomWord) {
         for (int i = 0; i < 21; i++) {
@@ -153,12 +153,11 @@ public class GameEngine {
                             for (String s : alphabets) {
                                 if (charLower.equals(s)) {
                                     System.out.print("[" + RED + charUpper + RESET + "] ");
-                                    break;
                                 } else {
                                     System.out.print("[" + YELLOW + charUpper + RESET + "] ");
                                     alphabets.add(charLower);
-                                    break;
                                 }
+                                break;
 
                             }
                         }
@@ -196,10 +195,8 @@ public class GameEngine {
     
 
 
-    /**
-     * @return the instructions for the game.
-     */
-    public static short instructions() {
+
+    public static void instructions() {
         File file = new File("src/main/resources/instructions.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
@@ -210,14 +207,9 @@ public class GameEngine {
             System.out.println("error");
         }
 
-
-        return 0;
     }
 
 
-    /**
-     * @return Important messages for the game.
-     */
     private static void general_message() {
         String instruction = "\n------------Type \"exit\" to exit or \"restart \" to restart the game------------------";
         System.out.println(instruction);

@@ -11,8 +11,8 @@ import java.util.Scanner;
  * @author 220031985
  */
 public class RandomEngine {
-
-    File randomWords = new File("src/test/resources/wordlist-test.txt");
+    File randomWords = new File("src/main/resources/wordlist.txt");
+   // File randomWords = new File("src/test/resources/wordlist-test.txt");
     Random random = new Random();
     int randomInt = random.nextInt(3);
     int i = 0;
