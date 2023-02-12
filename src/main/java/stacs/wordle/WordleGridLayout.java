@@ -3,7 +3,7 @@ package stacs.wordle;
 import java.util.Hashtable;
 
 /**
- * This class sets the Grid-layout for the wordle game.It is a 2D array of the alphabets and keys that hold the state of the color.
+ * This class sets the Grid-layout for the wordle game.It is a hashtable that holds  alphabets and keys which hold the state of the color.
  *
  * @author 220031985
  */

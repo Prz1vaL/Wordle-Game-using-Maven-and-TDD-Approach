@@ -1,7 +1,7 @@
 package stacs.wordle;
 
 /**
- * The ScoreEngine class is responsible for calculating the probability of the player guessing the word.
+ * The ScoreEngine class is responsible for calculating the Probability and Guess Distribution of the player.
  *
  * @author 220031985
  * @version 1.0
