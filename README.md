@@ -1,6 +1,6 @@
 # Wordle Game using Maven and TDD Approach
 
-## CS5031 - Software Engineering Practices 
+## CS5031 - Software Engineering Practices  - Practical 1
 
 ### Author : 220031985
 
@@ -18,7 +18,7 @@ Compiling and running:
 1) Extract the *.zip file.
 2) Navigate to the src folder of the Program.
 3) Compile the .java files in terminal 
-4) Also clean and package using mvn to generate .jar file
+4) Also clean (mvn clean) and package (mvn package) using maven to generate .jar file
 5) Run WordleApp.java to generate the Command Line Interface.
 
 JUnit Tests: JUnit Test built for the application run on JUnit5.
