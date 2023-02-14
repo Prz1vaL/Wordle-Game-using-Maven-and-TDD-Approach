@@ -21,4 +21,10 @@ class ScoreEngineTest {
     void guessDistribution() {
         assertEquals((0.5111111111111111), ScoreEngine.guessDistribution(45, 23));
     }
+
+    @Test
+    void probabilityAlgorithm() {
+        assertEquals((0.0), ScoreEngine.probabilityAlgorithm(1,6));
+
+    }
 }

@@ -44,4 +44,34 @@ public class ScoreEngine {
             return gamesWon / gamesPlayed;
         }
     }
+
+    /**
+     * @param attempts The number of attempts the player has made.
+     * @param guesses The number of correct guesses the player has made.
+     * @return
+     */
+    public static double probabilityAlgorithm(double attempts,double guesses){
+        // This is a self-made algorithm to calculate the probability of the player based on number of attempts and number of correct guesses.
+        double probabilityFactor = 0;
+        double probability = 100;
+        double probabilityFactorTotal = 0;
+        // Question is
+        /*
+        Find the probability of guessing the right 5-letter word for the following conditions:
+        Total number of words is 14855
+        Total number of attempts is 6
+        One word per attempt (x)
+        Find p(n) for each attempt.
+        Note : If 'x' word contains a character or more (but not all) of the right 5-letter word in any attempt what is the probability factor in the next attempt?
+         */
+
+        // The probability of guessing the right 5-letter word for the following conditions:
+    for(int i = 1; i <= attempts; i++){
+     double firstDenominator = (14855 - (i - 1));
+     double secondDenominator = (26 ^5);
+            probabilityFactor = ((1/firstDenominator) + (guesses * (1/secondDenominator)));
+            probabilityFactorTotal += probabilityFactor;
+        }
+        return probabilityFactorTotal;
+    }
 }

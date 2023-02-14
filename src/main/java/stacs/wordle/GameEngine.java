@@ -31,7 +31,7 @@ public class GameEngine {
     private static final ArrayList<String> alphabets = new ArrayList<>();
     private static int attemptActual;
     private static int gamesPlayed;
-
+    private static int guesses;
     private static int gamesWon;
     private static double scoreHolder;
 
@@ -67,24 +67,28 @@ public class GameEngine {
                     gameWon();
                     scoreCalculate();
                     if (attempts == 0) {
-
                         System.out.println("You guessed the word in " + attemptActual + " attempt. You are a genius !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + ScoreEngine.probabilityAlgorithm(attemptActual,guesses) + " %");
                         resultMessage();
                         restartGame();
                     } else if (attempts == 1) {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a worthy !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + ScoreEngine.probabilityAlgorithm(attemptActual,guesses) + " %");
                         resultMessage();
                         restartGame();
                     } else if(attempts == 2) {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a outstanding !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + ScoreEngine.probabilityAlgorithm(attemptActual,guesses) + " %");
                         resultMessage();
                         restartGame();
                     } else if (attempts == 3 ) {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a good !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + ScoreEngine.probabilityAlgorithm(attemptActual,guesses) + " %");
                         resultMessage();
                         restartGame();
                     } else if (attempts == 4) {
                         System.out.println("You guessed the word in " + attemptActual + " attempts. You are a average !");
+                        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + ScoreEngine.probabilityAlgorithm(attemptActual,guesses) + " %");
                         resultMessage();
                         restartGame();
                     }
@@ -122,8 +126,8 @@ public class GameEngine {
      * The method that displays the result/scoring logic.
      */
     private static void resultMessage() {
-        System.out.println("The probability of you guessing the word in " + attemptActual + " attempt was " + scoreHolder + " %");
         System.out.println("The Guess Distribution after playing " + gamesPlayed + " games is " + (guessDistribution * 100) + " %");
+
     }
 
 
@@ -166,9 +170,11 @@ public class GameEngine {
                                 break;
 
                             }
+                            guesses = guesses + 1;
                         }
                         break;
                     case 2:
+                        guesses = guesses + 1;
                         WORDLE_GRID_LAYOUT.alphabets.replace(charLower, 2);
                         System.out.print("[" + GREEN + charUpper + RESET + "] ");
                         break;
