@@ -1,6 +1,6 @@
 # Wordle Game using Maven and TDD Approach
 
-## CS5031 - Software Engineering Practices  - Practical 1
+## Software Engineering Practices
 
 ### Author : 220031985
 
