@@ -62,7 +62,4 @@ Test Files :
 
 ## LICENSE :
 This project is licensed under the MIT License. See the <code> LICENSE </code> file for more information.
-
-No. of Tests Written : 
-
 --- 
