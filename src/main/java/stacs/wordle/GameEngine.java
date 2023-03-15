@@ -29,13 +29,13 @@ public class GameEngine {
     private static final WordleGridLayout WORDLE_GRID_LAYOUT = new WordleGridLayout();
     private static boolean gameStatus = true;
     private static final ArrayList<String> alphabets = new ArrayList<>();
-    private static int attemptActual;
-    private static int gamesPlayed;
+    static int attemptActual;
+    static int gamesPlayed;
     private static int guesses;
-    private static int gamesWon;
-    private static double scoreHolder;
+    static int gamesWon;
+    static double scoreHolder;
 
-    private static double guessDistribution;
+    static double guessDistribution;
 
 
     /**
@@ -108,7 +108,7 @@ public class GameEngine {
         scanner.close();
     }
 
-    private static void scoreCalculate() {
+    static void scoreCalculate() {
         scoreHolder = ScoreEngine.calculateScore(attemptActual);
         guessDistribution = ScoreEngine.guessDistribution(gamesPlayed, gamesWon);
     }
@@ -116,7 +116,7 @@ public class GameEngine {
     /**
      * The method that holds game won logic.
      */
-    private static void gameWon() {
+    static void gameWon() {
         gamesPlayed = gamesPlayed + 1;
         gamesWon = gamesWon + 1;
         attemptActual = attempts + 1;
@@ -125,7 +125,7 @@ public class GameEngine {
     /**
      * The method that displays the result/scoring logic.
      */
-    private static void resultMessage() {
+    static void resultMessage() {
         System.out.println("The Guess Distribution after playing " + gamesPlayed + " games is " + (guessDistribution * 100) + " %");
 
     }
